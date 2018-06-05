@@ -1,0 +1,19 @@
+service: test
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${opt:stage, 'local'}
+  region: us-east-1
+
+functions:
+  api:
+    handler: src/index.graphqlHandler
+    events:
+      - http:
+          path: "{proxy+}"
+          method: any
+          cors: true
+
+plugins:
+  - serverless-webpack
+  - serverless-offline

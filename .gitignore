@@ -1,0 +1,13 @@
+# package directories
+node_modules
+
+# Serverless directories
+.serverless
+
+# Webpack
+.webpack
+
+# other
+.DS_Store
+data
+data/**
